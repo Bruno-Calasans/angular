@@ -1,13 +1,15 @@
 <div>
-  <h1>One Way Data Binding - Event Binding</h1>
+  <h1 class="text-2xl font-bold">One Way Data Binding - Event Binding</h1>
   <p>Data comes from Component to HTML file</p>
   <p>The HTML tag fires a event to the component</p>
-  <div style="display: flex; flex-direction: column">
+  <div class="flex flex-col gap-2">
     <!--  -->
-    <button (click)="showMsg()">Click me</button>
+    <button class="bg-indigo-500 rounded-sm p-1 text-white" (click)="showMsg()">
+      Click me
+    </button>
 
     <!-- Select -->
-    <label for="test-select">Select a option</label>
+    <label class="font-bold" for="test-select">Select a option</label>
     <select id="test-select" (change)="showColor()">
       <option value="yellow">Yellow</option>
       <option value="red">Red</option>
