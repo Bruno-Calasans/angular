@@ -5,6 +5,7 @@ import { InterpolationComponent } from './data-binding/interpolation/interpolati
 import { PropertyBindingComponent } from './data-binding/property-binding/property-binding.component';
 import { EventBindingComponent } from './data-binding/event-binding/event-binding.component';
 import { NgModelComponent } from './data-binding/ng-model/ng-model.component';
+import { NgIfComponent } from './structural-directives/ng-if/ng-if.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { NgModelComponent } from './data-binding/ng-model/ng-model.component';
     PropertyBindingComponent,
     EventBindingComponent,
     NgModelComponent,
+    NgIfComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,0 +1,104 @@
+<div class="p-2">
+  <h1 class="text-2xl font-bold">Angular IF</h1>
+
+  <h1 class="font-bold">Conditional Examples - using *ngIf</h1>
+  <!-- Using ngIf -->
+  <div class="flex gap-1 p-2">
+    <input type="checkbox" (click)="toggleChecked()" />
+    <p>Agree with Terms and Conditions</p>
+  </div>
+  <button
+    *ngIf="checked"
+    class="bg-indigo-500 font-bold text-white p-1 rounded-sm cursor-pointer hover:bg-indigo-600 transition-all"
+  >
+    Submit
+  </button>
+
+  <!-- Using ngIf -->
+  <div class="flex flex-col gap-2">
+    <input type="text" placeholder="Something" *ngIf="showInput" disabled />
+    <button
+      class="bg-indigo-500 font-bold text-white p-1 rounded-sm cursor-pointer hover:bg-indigo-600 transition-all"
+      (click)="setShowInput(true)"
+    >
+      Show
+    </button>
+    <button
+      class="bg-indigo-500 font-bold text-white p-1 rounded-sm cursor-pointer hover:bg-indigo-600 transition-all"
+      (click)="setShowInput(false)"
+    >
+      Hide
+    </button>
+  </div>
+
+  <h1 class="font-bold">More Conditional Examples - using *ngIf</h1>
+  <div class="flex gap-1 flex-col mt-2">
+    <input type="text" [(ngModel)]="password" placeholder="Password" />
+    <input
+      type="text"
+      [(ngModel)]="passwordConfirmation"
+      placeholder="Password Confirmation"
+    />
+
+    <div class="font-bold text-lg">
+      <p class="text-red-500" *ngIf="password !== passwordConfirmation">
+        Both passswords are not equal
+      </p>
+      <p class="text-emerald-500" *ngIf="password === passwordConfirmation">
+        Both passswords are equal
+      </p>
+    </div>
+  </div>
+
+  <!-- Using @if -->
+  <h1 class="font-bold">Conditional Examples - using &#x40;if</h1>
+  <div class="flex gap-1 p-2">
+    <input type="checkbox" (click)="toggleChecked()" />
+    <p>Agree with Terms and Conditions</p>
+  </div>
+  <button
+    *ngIf="checked"
+    class="bg-indigo-500 font-bold text-white p-1 rounded-sm cursor-pointer hover:bg-indigo-600 transition-all"
+  >
+    Submit
+  </button>
+
+  <div class="flex flex-col gap-2">
+    @if(showInput){
+    <input type="text" placeholder="Something" *ngIf="showInput" disabled />
+    }
+    <button
+      class="bg-indigo-500 font-bold text-white p-1 rounded-sm cursor-pointer hover:bg-indigo-600 transition-all"
+      (click)="setShowInput(true)"
+    >
+      Show
+    </button>
+    <button
+      class="bg-indigo-500 font-bold text-white p-1 rounded-sm cursor-pointer hover:bg-indigo-600 transition-all"
+      (click)="setShowInput(false)"
+    >
+      Hide
+    </button>
+  </div>
+
+  <!-- Using @if -->
+  <h1 class="font-bold">More Conditional Examples - using &#x40;If</h1>
+  <div class="flex gap-1 flex-col mt-2">
+    <input type="text" [(ngModel)]="password" placeholder="Password" />
+    <input
+      type="text"
+      [(ngModel)]="passwordConfirmation"
+      placeholder="Password Confirmation"
+    />
+
+    <div class="font-bold text-lg">
+      @if(password !== passwordConfirmation){
+      <p class="text-red-500">Both passswords are not equal</p>
+      } @else if(password === passwordConfirmation && password==''){
+      <p class="text-amber-500">Both passswords are empty</p>
+      } @else{
+      <p class="text-emerald-500">Both passswords are equal</p>
+      }
+    </div>
+  </div>
+</div>
