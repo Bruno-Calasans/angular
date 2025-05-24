@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-2">
+  <!-- <div>
+    <h1>Using *ngSwitch - Example</h1>
+    <input type="text" placeholder="Type your job" [(ngModel)]="job" />
+    <p>Your job is: {{ job }}</p>
+    <div [ngSwitch]="job">
+      <p *ngSwitchCase="'influencer'">You're a piece of shit</p>
+      <p *ngSwitchCase="'dev'">Are u okay?</p>
+      <p *ngSwitchCase="'whore'">Well... How much for your ass?</p>
+      <p *ngSwitchDefault class="text-red-500 font-bold">Fuck you</p>
+    </div>
+  </div> -->
+
+  <div>
+    <h1>Using &commat;switch- Example</h1>
+    <input type="text" placeholder="Type your job" [(ngModel)]="job" />
+    <p>Your job is: {{ job }}</p>
+    <div>
+      @switch (job) { @case('influencer'){
+      <p>You're a piece of shit</p>
+      } @case('dev'){
+      <p>Are u okay?</p>
+      } @case('whore'){
+      <p>Well... How much for your ass?</p>
+      } @default {
+      <p class="text-red-500 font-bold">Fuck you</p>
+      } }
+    </div>
+  </div>
+</div>

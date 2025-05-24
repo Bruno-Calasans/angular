@@ -7,18 +7,21 @@ import { EventBindingComponent } from './data-binding/event-binding/event-bindin
 import { NgModelComponent } from './data-binding/ng-model/ng-model.component';
 import { NgIfComponent } from './structural-directives/ng-if/ng-if.component';
 import { NgForComponent } from './structural-directives/ng-for/ng-for.component';
+import { NgSwitchComponent } from './structural-directives/ng-switch/ng-switch.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    UserComponent,
-    InterpolationComponent,
-    PropertyBindingComponent,
-    EventBindingComponent,
-    NgModelComponent,
-    NgIfComponent,
-    NgForComponent,
+    // UserComponent,
+    // InterpolationComponent,
+    // PropertyBindingComponent,
+    // EventBindingComponent,
+    // NgModelComponent,
+    // NgIfComponent,
+    // NgForComponent,
+    // NgSwitchComponent
+    NgSwitchComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
