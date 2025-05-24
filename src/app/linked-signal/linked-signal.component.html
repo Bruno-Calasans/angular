@@ -1,0 +1,12 @@
+<div class="p-2">
+  <h1>Linked Signal</h1>
+  <p>Amount: {{ amount() }}</p>
+  <p>Price: R${{ price() }}</p>
+  <button (click)="calculateTotal()">Calculate</button>
+  <p class="mt-2 font-bold">Total: R${{ total() }}</p>
+
+  <div>
+    <p>{{ selectedUserName()?.name || "No selected user" }}</p>
+    <button (click)="setUser(2)">Select User</button>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { NgForComponent } from './structural-directives/ng-for/ng-for.component'
 import { NgSwitchComponent } from './structural-directives/ng-switch/ng-switch.component';
 import { NgClassComponent } from './attribute-directives/ng-class/ng-class.component';
 import { SignalsComponent } from './signals/signals.component';
+import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ import { SignalsComponent } from './signals/signals.component';
     // NgSwitchComponent
     // NgSwitchComponent,
     // NgClassComponent,
-    SignalsComponent,
+    // SignalsComponent,
+    LinkedSignalComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
