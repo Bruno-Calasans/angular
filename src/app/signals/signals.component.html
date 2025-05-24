@@ -1,0 +1,9 @@
+<div class="p-2">
+  <h1>Signals</h1>
+  <p>Counter value: {{ counter() }}</p>
+  <p>{{ isNegative() ? "Negative" : "Positive" }}</p>
+  <div class="flex gap-2">
+    <button (click)="incrementCounter()">Increment</button>
+    <button (click)="decreaseCounter()">Decrease</button>
+  </div>
+</div>

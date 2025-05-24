@@ -9,6 +9,7 @@ import { NgIfComponent } from './structural-directives/ng-if/ng-if.component';
 import { NgForComponent } from './structural-directives/ng-for/ng-for.component';
 import { NgSwitchComponent } from './structural-directives/ng-switch/ng-switch.component';
 import { NgClassComponent } from './attribute-directives/ng-class/ng-class.component';
+import { SignalsComponent } from './signals/signals.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { NgClassComponent } from './attribute-directives/ng-class/ng-class.compo
     // NgForComponent,
     // NgSwitchComponent
     // NgSwitchComponent,
-    NgClassComponent
+    // NgClassComponent,
+    SignalsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
