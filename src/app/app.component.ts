@@ -8,6 +8,7 @@ import { NgModelComponent } from './data-binding/ng-model/ng-model.component';
 import { NgIfComponent } from './structural-directives/ng-if/ng-if.component';
 import { NgForComponent } from './structural-directives/ng-for/ng-for.component';
 import { NgSwitchComponent } from './structural-directives/ng-switch/ng-switch.component';
+import { NgClassComponent } from './attribute-directives/ng-class/ng-class.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { NgSwitchComponent } from './structural-directives/ng-switch/ng-switch.c
     // NgIfComponent,
     // NgForComponent,
     // NgSwitchComponent
-    NgSwitchComponent,
+    // NgSwitchComponent,
+    NgClassComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

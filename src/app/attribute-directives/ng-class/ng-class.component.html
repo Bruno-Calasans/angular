@@ -1,0 +1,37 @@
+<div class="flex flex-col gap-3 p-4">
+  <div>
+    <h1 class="font-bold">NgClass - Example 1</h1>
+    <p [ngClass]="classes">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+      consequatur non maiores voluptate, praesentium asperiores a voluptatibus
+      nesciunt similique nulla autem, exercitationem reprehenderit, assumenda
+      provident sint modi expedita ipsa nam?
+    </p>
+    <div class="flex gap-2 p-2">
+      <button (click)="addClass('text-red-500')">Change Color</button>
+      <button (click)="removeClass('text-red-500')">Remove Color</button>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-bold">NgClass - Example 2</h1>
+    <p [ngClass]="isSuccess ? 'text-green-500' : 'text-indigo-500'">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+      consequatur non maiores voluptate, praesentium asperiores a voluptatibus
+      nesciunt similique nulla autem, exercitationem reprehenderit, assumenda
+      provident sint modi expedita ipsa nam?
+    </p>
+    <button (click)="toggleSuccess()">Toggle Success</button>
+  </div>
+
+  <div>
+    <h1 class="font-bold">NgClass - Example 3</h1>
+    <p [ngClass]="userClass">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+      consequatur non maiores voluptate, praesentium asperiores a voluptatibus
+      nesciunt similique nulla autem, exercitationem reprehenderit, assumenda
+      provident sint modi expedita ipsa nam?
+    </p>
+    <input type="text" [(ngModel)]="userClass" />
+  </div>
+</div>
