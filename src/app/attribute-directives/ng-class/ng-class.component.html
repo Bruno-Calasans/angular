@@ -34,4 +34,39 @@
     </p>
     <input type="text" [(ngModel)]="userClass" />
   </div>
+
+  <div>
+    <h1 class="font-bold">NgStyle - Example 1</h1>
+    <p [ngStyle]="{ color: textColor }">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+      consequatur non maiores voluptate, praesentium asperiores a voluptatibus
+      nesciunt similique nulla autem, exercitationem reprehenderit, assumenda
+      provident sint modi expedita ipsa nam?
+    </p>
+    <div class="flex gap-2 p-2">
+      <button (click)="changeColor()">Change Color</button>
+      <button (click)="removeColor()">Remove Color</button>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-bold">NgStyle - Example 2</h1>
+    <p [ngStyle]="{ color: isSuccess ? 'green' : 'red' }">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+      consequatur non maiores voluptate, praesentium asperiores a voluptatibus
+      nesciunt similique nulla autem, exercitationem reprehenderit, assumenda
+      provident sint modi expedita ipsa nam?
+    </p>
+    <button (click)="toggleSuccess()">Toggle Success</button>
+  </div>
+
+  <div>
+    <h1 class="font-bold">NgStyle - Example 3</h1>
+    <p [ngStyle]="customStyle">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+      consequatur non maiores voluptate, praesentium asperiores a voluptatibus
+      nesciunt similique nulla autem, exercitationem reprehenderit, assumenda
+      provident sint modi expedita ipsa nam?
+    </p>
+  </div>
 </div>
