@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { InterpolationComponent } from './data-binding/interpolation/interpolation.component';
 import { PropertyBindingComponent } from './data-binding/property-binding/property-binding.component';
@@ -16,6 +16,8 @@ import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
   selector: 'app-root',
   imports: [
     RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
     // UserComponent,
     // InterpolationComponent,
     // PropertyBindingComponent,
@@ -27,11 +29,29 @@ import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
     // NgSwitchComponent,
     // NgClassComponent,
     // SignalsComponent,
-    LinkedSignalComponent,
+    // LinkedSignalComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'tutorial';
+  links = [
+    {
+      url: '/',
+      label: 'Home',
+    },
+    {
+      url: 'linked-signal',
+      label: 'Linked Signals',
+    },
+    {
+      url: 'signals',
+      label: 'Signals',
+    },
+    {
+      url: 'user',
+      label: 'User',
+    },
+  ];
 }
