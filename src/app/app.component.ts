@@ -6,6 +6,7 @@ import { PropertyBindingComponent } from './data-binding/property-binding/proper
 import { EventBindingComponent } from './data-binding/event-binding/event-binding.component';
 import { NgModelComponent } from './data-binding/ng-model/ng-model.component';
 import { NgIfComponent } from './structural-directives/ng-if/ng-if.component';
+import { NgForComponent } from './structural-directives/ng-for/ng-for.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { NgIfComponent } from './structural-directives/ng-if/ng-if.component';
     EventBindingComponent,
     NgModelComponent,
     NgIfComponent,
+    NgForComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,0 +1,82 @@
+<div class="p-2">
+  <!-- <h1 class="text-lg font-bold">Loop using *ngFor - example 1</h1>
+  <div>
+    <select>
+      <option
+        [value]="user.name"
+        *ngFor="let user of users"
+        onselect="(e)=>setSelectedUser"
+      >
+        {{ user.name }}
+      </option>
+    </select>
+    <p>{{ selectedUser }}</p>
+  </div> -->
+
+  <!-- <h1 class="text-lg font-bold">Loop using *ngFor - example 2</h1>
+  <div>
+    <table>
+      <thead>
+        <tr class="flex justify-between">
+          <th>Name</th>
+          <th>Studant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>@if(user.student){ Yes }@else{ No }</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+  <h1 class="text-lg font-bold">Loop using &commat;For - example 1</h1>
+  <div>
+    <select>
+      @for (user of users; track $index; let index = $index, count = $count,
+      first = $first, last = $last, even = $even, odd = $odd) { @if (first) {
+      <option [value]="user.name" class="text-red-400">
+        <p class="text-red-500 font-bold">
+          {{ user.name }} {{ index + 1 }}/{{ count }}
+        </p>
+      </option>
+      }@else if(last){
+      <option [value]="user.name" class="text-indigo-400">
+        {{ user.name }} {{ index + 1 }}/{{ count }}
+      </option>
+      } @else {
+      <option [value]="user.name">
+        <p class="text-red-500 font-bold">
+          {{ user.name }} {{ index + 1 }}/{{ count }}
+        </p>
+      </option>
+      } } @empty {
+      <option id="empty-users" value="none" class="text-red-500 font-bold">
+        No users found!
+      </option>
+      }
+    </select>
+    <p>{{ selectedUser }}</p>
+  </div>
+
+  <!-- <h1 class="text-lg font-bold">Loop using &commat;For - example 2</h1>
+  <div>
+    <table>
+      <thead>
+        <tr class="flex justify-between">
+          <th>Name</th>
+          <th>Studant</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users; track $index) {
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>@if(user.student){ Yes }@else{ No }</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div> -->
+</div>
