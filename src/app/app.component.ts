@@ -57,5 +57,9 @@ export class AppComponent {
       url: 'navigation',
       label: 'Navigation',
     },
+    {
+      url: 'life-cycle',
+      label: 'Life Cycle',
+    },
   ];
 }

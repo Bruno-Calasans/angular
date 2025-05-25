@@ -4,6 +4,7 @@ import { SignalsComponent } from './signals/signals.component';
 import { UserComponent } from './user/user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 
 export const routes: Routes = [
   // Default Route
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'navigation',
     component: NavigationComponent,
+  },
+  {
+    path: 'life-cycle',
+    component: LifeCycleComponent,
   },
   {
     path: '**',
