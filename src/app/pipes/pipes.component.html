@@ -48,12 +48,19 @@
   </div>
 
   <div>
-    <p>{{ asyncData | async }}</p>
     <p class="font-bold text-lg">Async Pipe</p>
+    <p>{{ asyncData | async }}</p>
     @for (item of asyncData | async; track item) {
     <li>{{ item }}</li>
     }
   </div>
-  <!-- <p>{{ numberPipes | currency }}</p> -->
-  <!-- <p>{{ numberPipes | decimal }}</p> -->
+
+  <div>
+    <p class="font-bold text-lg">Custom Pipes</p>
+    <p>1. Boolean Pipe = {{ booleanPipes | custom }}</p>
+    <p>1. Boolean Pipe = {{ !booleanPipes | custom }}</p>
+    <p>1. Boolean Pipe = {{ booleanPipes | custom : "yeah" : "shit" }}</p>
+    <p>1. Boolean Pipe = {{ !booleanPipes | custom : "yeah" : "shit" }}</p>
+    <p>1. Boolean Pipe = {{ !booleanPipes | custom : "Oh my" }}</p>
+  </div>
 </div>

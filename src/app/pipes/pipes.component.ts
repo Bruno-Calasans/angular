@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { of } from 'rxjs';
+import { CustomPipe } from '../custom-pipes/custom.pipe';
 
 @Component({
   selector: 'app-pipes',
-  imports: [CommonModule],
+  imports: [CommonModule, CustomPipe],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css',
 })
-
 export class PipesComponent {
   textPipes = 'Some text';
   numberPipes = 100;
@@ -20,4 +20,6 @@ export class PipesComponent {
   datePipes = new Date();
 
   asyncData = of(['Keyboard', 'Monitor']);
+
+  booleanPipes = true;
 }
