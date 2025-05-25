@@ -3,6 +3,7 @@ import { LinkedSignalComponent } from './linked-signal/linked-signal.component';
 import { SignalsComponent } from './signals/signals.component';
 import { UserComponent } from './user/user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 export const routes: Routes = [
   // Default Route
@@ -10,7 +11,6 @@ export const routes: Routes = [
     path: '',
     component: UserComponent,
   },
-  // Redirect with prefix
   {
     path: 'user',
     component: UserComponent,
@@ -22,6 +22,10 @@ export const routes: Routes = [
   {
     path: 'linked-signal',
     component: LinkedSignalComponent,
+  },
+  {
+    path: 'navigation',
+    component: NavigationComponent,
   },
   {
     path: '**',

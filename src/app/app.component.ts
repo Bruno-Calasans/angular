@@ -53,5 +53,9 @@ export class AppComponent {
       url: 'user',
       label: 'User',
     },
+    {
+      url: 'navigation',
+      label: 'Navigation',
+    },
   ];
 }
