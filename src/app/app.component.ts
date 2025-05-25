@@ -61,5 +61,9 @@ export class AppComponent {
       url: 'life-cycle',
       label: 'Life Cycle',
     },
+    {
+      url: 'pipes',
+      label: 'Pipes',
+    },
   ];
 }

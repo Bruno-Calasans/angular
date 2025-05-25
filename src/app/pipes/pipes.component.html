@@ -1,0 +1,59 @@
+<div class="p-2">
+  <h1>Pipes</h1>
+  <div>
+    <p class="font-bold text-lg">Text Pipes</p>
+    <p>1. TitlePipe = {{ textPipes | titlecase }}</p>
+    <p>2. UpperPipe = {{ textPipes | uppercase }}</p>
+    <p>3. LowerPipe = {{ textPipes | lowercase }}</p>
+    <p>4. slice(2:6) = {{ textPipes | slice : 2 : 6 }}</p>
+    <p>4. slice(0:4) = {{ textPipes | slice : 0 : 4 }}</p>
+    <p>4. slice(-1) = {{ textPipes | slice : -1 }}</p>
+    <p>4. slice(2:4) for arrays = {{ [0, 1, 8, 9, 10] | slice : 2 : 4 }}</p>
+    <p>5. Object to Json = {{ person | json }}</p>
+    <pre>5. Object to Json = {{ person | json }}</pre>
+    <p>
+      6. Object to key and value and to Json = {{ person | keyvalue | json }}
+    </p>
+    <p>7. Plural = {{ textPipes }}</p>
+  </div>
+
+  <div>
+    <p class="font-bold text-lg">Date Pipes</p>
+    <p>1. Datepipe = {{ datePipes | date }}</p>
+    <p>2. Short Datepipe = {{ datePipes | date : "short" }}</p>
+    <p>2. Short Date = {{ datePipes | date : "shortDate" }}</p>
+    <p>2. Short Date Time = {{ datePipes | date : "shortTime" }}</p>
+    <p>3. Medium Datepipe = {{ datePipes | date : "medium" }}</p>
+    <p>3. Medium Date = {{ datePipes | date : "mediumDate" }}</p>
+    <p>3. Medium Date Time = {{ datePipes | date : "mediumTime" }}</p>
+    <p>4. Full Datepipe = {{ datePipes | date : "full" }}</p>
+    <p>4. Full Date = {{ datePipes | date : "fullDate" }}</p>
+    <p>4. Full Date Time = {{ datePipes | date : "fullTime" }}</p>
+    <p>5. Custom Date = {{ datePipes | date : "h/m" }}</p>
+  </div>
+
+  <div>
+    <p class="font-bold text-lg">Number Pipes</p>
+    <p>1. Currency Pipe = {{ numberPipes | currency }}</p>
+    <p>1. Currency Pipe = {{ numberPipes | currency : "BRL" }}</p>
+    <p>
+      1. Currency Pipe = {{ numberPipes | currency : "R$" : "code" : "1.4" }}
+    </p>
+    <p>2. Decimal Pipe = {{ 99.2419323 | number : "1.2" }}</p>
+    <p>2. Decimal Pipe = {{ 1.3 | number : "2.2" }}</p>
+    <p>2. Decimal Pipe = {{ 1.3 | number : "1.4" }}</p>
+    <p>3. Percent Pipe = {{ 0.3 | percent }}</p>
+    <p>3. Percent Pipe = {{ 1 | percent }}</p>
+    <p>3. Percent Pipe = {{ 1.3 | percent }}</p>
+  </div>
+
+  <div>
+    <p>{{ asyncData | async }}</p>
+    <p class="font-bold text-lg">Async Pipe</p>
+    @for (item of asyncData | async; track item) {
+    <li>{{ item }}</li>
+    }
+  </div>
+  <!-- <p>{{ numberPipes | currency }}</p> -->
+  <!-- <p>{{ numberPipes | decimal }}</p> -->
+</div>
