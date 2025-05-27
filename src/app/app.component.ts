@@ -65,5 +65,9 @@ export class AppComponent {
       url: 'pipes',
       label: 'Pipes',
     },
+    {
+      url: 'template-driven-form',
+      label: 'Template Driven Form',
+    },
   ];
 }

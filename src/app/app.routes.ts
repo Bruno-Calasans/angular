@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 
 export const routes: Routes = [
   // Default Route
@@ -36,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'pipes',
     component: PipesComponent,
+  },
+  {
+    path: 'template-driven-form',
+    component: TemplateDrivenFormComponent,
   },
   {
     path: '**',

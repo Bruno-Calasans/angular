@@ -3,7 +3,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'custom',
+  // If true, It's called every time the input changes
+  // On the other hand, it's called avery time the component changes
+  pure: true,
 })
+
 export class CustomPipe implements PipeTransform {
   private titlePipe = new TitleCasePipe();
 

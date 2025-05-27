@@ -1,0 +1,149 @@
+<div class="p-2">
+  <h1 class="font-bold text-lg">Template Driven Form</h1>
+
+  <!-- Create Basic Form -->
+  <!--  -->
+  <form
+    #testForm="ngForm"
+    (ngSubmit)="onSubmit(testForm)"
+    action=""
+    method="post"
+    class="flex flex-col gap-2 w-64"
+  >
+    <!-- Default NgForm Properties -->
+    <p>Form Status</p>
+    <pre>Value: {{ testForm.value | json }}</pre>
+    <pre>Valid: {{ testForm.valid | json }}</pre>
+    <pre>Invalid: {{ testForm.invalid | json }}</pre>
+    <pre>Untouched: {{ testForm.untouched | json }}</pre>
+    <pre>Touched: {{ testForm.touched | json }}</pre>
+    <pre>Dirty: {{ testForm.dirty | json }}</pre>
+    <pre>Submitted: {{ testForm.submitted | json }}</pre>
+
+    <label class="flex flex-col gap-1 justify-center"
+      >First Name
+      <input
+        #inputFirstName="ngModel"
+        name="firstName"
+        [(ngModel)]="inputs.firstName"
+        type="text"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="James"
+        minlength="3"
+        pattern="[a-zA-Z]{3,}"
+        required
+    /></label>
+    <!-- {{inputFirstName.errors| json}} -->
+    @if(inputFirstName.errors && (inputFirstName.dirty||inputFirstName.touched)){
+
+        @if(inputFirstName.errors['required'] ){
+            <small class="text-red-500">Required field.</small>
+        }
+
+        @if(inputFirstName.errors['minlength'] ){
+            <small class="text-red-500">Field must have {{inputFirstName.errors['minlength']['requiredLength']}} ou more characteres.</small>
+        }
+
+        @if(inputFirstName.errors['pattern'] ){
+          <small class="text-red-500">First must have only letters.</small>
+      }
+    
+    }
+
+    <label class="flex flex-col gap-1 justify-center"
+      >Email
+      <input
+        #emailInput="ngModel"
+        name="email"
+        [(ngModel)]="inputs.email"
+        type="email"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="example@email.com"
+        email
+        required
+    /></label>
+
+    @if(emailInput.errors && (emailInput.dirty||emailInput.touched)){
+
+      @if(emailInput.errors['required'] ){
+          <small class="text-red-500">Required field.</small>
+      }
+
+      @if(emailInput.errors['email'] ){
+        <small class="text-red-500">Invalid email.</small>
+    }
+  
+  }
+
+    <label class="flex flex-col gap-1 justify-center"
+      >Age
+      <input
+        #ageInput="ngModel"
+        name="age"
+        [(ngModel)]="inputs.age"
+        type="number"
+        min="1"
+        max="200"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="24"
+        required
+    /></label>
+    @if(ageInput.errors && (ageInput.dirty||ageInput.touched)){
+
+      @if(ageInput.errors['required'] ){
+          <small class="text-red-500">Required field.</small>
+      }
+
+      @if(ageInput.errors['max'] ){
+        <small class="text-red-500">Max value is {{ageInput.errors['max']['max']}}</small>
+      }
+
+      @if(ageInput.errors['min'] ){
+        <small class="text-red-500">Min value is {{ageInput.errors['min']['min']}}</small>
+      }
+    }
+
+    <label class="flex flex-col gap-1 justify-center"
+      >Tipo
+      <select name="type" [(ngModel)]="inputs.type" required>
+        @for(type of types; track $index){
+          <option [value]="type">{{ type }}</option>
+        }
+      </select>
+    </label>
+
+    <label class="flex gap-1"
+      >Are you gay?
+      <input
+        name="isGay"
+        [(ngModel)]="inputs.isGay"
+        type="checkbox"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="24"
+    /></label>
+
+    <div class="flex gap-2">
+      <button
+        [disabled]="testForm.invalid"
+        type="submit"
+        class="border-1 border-indigo-500 p-1 cursor-pointer disabled:opacity-50"
+      >
+        Submit
+      </button>
+      <button
+        type="button"
+        (click)="setDefault(testForm)"
+        class="border-1 border-indigo-500 p-1 cursor-pointer"
+      >
+        Reset
+      </button>
+      <button
+        type="button"
+        (click)="patchValues(testForm)"
+        class="border-1 border-indigo-500 p-1 cursor-pointer"
+      >
+        Patch Email
+      </button>
+    </div>
+  </form>
+</div>
