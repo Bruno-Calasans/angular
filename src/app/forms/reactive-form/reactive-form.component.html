@@ -1,0 +1,251 @@
+<div class="p-10">
+  <h1 class="font-bold text-lg">Template Driven Form</h1>
+
+  <form
+    [formGroup]="reactiveForm"
+    (ngSubmit)="onSubmit()"
+    action=""
+    method="post"
+    class="flex flex-col gap-2 w-80"
+  >
+    <!-- Default NgForm Properties -->
+    <p>Form Status</p>
+    <pre>Value: {{ reactiveForm.value | json }}</pre>
+    <pre>Invalid: {{ reactiveForm.invalid | json }}</pre>
+    <!-- <pre>Untouched: {{ reactiveForm.untouched | json }}</pre> -->
+    <!-- <pre>Touched: {{ reactiveForm.touched | json }}</pre> -->
+    <!-- <pre>Dirty: {{ reactiveForm.dirty | json }}</pre> -->
+    <!-- <pre>Submitted: {{ reactiveForm.sub | json }}</pre> -->
+    <pre>Errors: {{ reactiveForm.hasError | json }}</pre>
+    <pre>Errors: {{ reactiveForm.controls['address.city']}}</pre>
+
+    <label class="flex flex-col gap-1 justify-center"
+      >First Name
+      <input
+        name="firstName"
+        formControlName="firstName"
+        type="text"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="James"
+        minlength="3"
+        pattern="[a-zA-Z]{3,}"
+        required
+    /></label>
+    <!-- First name input errors -->
+    @if(reactiveForm.controls['firstName'].errors && (reactiveForm.controls['firstName'].dirty||reactiveForm.controls['firstName'].touched)){
+
+      @if(reactiveForm.controls['firstName'].errors['required'] ){
+          <small class="text-red-500">Required field.</small>
+      }
+
+      @if(reactiveForm.controls['firstName'].errors['minlength'] ){
+          <small class="text-red-500">Field must have {{reactiveForm.controls['firstName'].errors['minlength']['requiredLength']}} ou more characteres.</small>
+      }
+
+      @if(reactiveForm.controls['firstName'].errors['pattern'] ){
+        <small class="text-red-500">First must have only letters.</small>
+      }
+  
+  }
+
+    <label class="flex flex-col gap-1 justify-center"
+      >Email
+      <input
+        name="email"
+        formControlName="email"
+        type="email"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="example@email.com"
+        email
+        required
+    /></label>
+
+    @if(reactiveForm.controls['email'].errors && (reactiveForm.controls['email'].dirty||reactiveForm.controls['email'].touched)){
+
+      @if(reactiveForm.controls['email'].errors['required'] ){
+          <small class="text-red-500">Required field.</small>
+      }
+
+      @if(reactiveForm.controls['email'].errors['email'] ){
+        <small class="text-red-500">Invalid email.</small>
+      }
+  
+    }
+
+    <label class="flex flex-col gap-1 justify-center"
+      >Age
+      <input
+        name="age"
+        formControlName="age"
+        type="number"
+        min="1"
+        max="200"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="24"
+        required
+    /></label>
+
+    @if(reactiveForm.controls['age'].errors && (reactiveForm.controls['age'].dirty||reactiveForm.controls['age'].touched)){
+
+      @if(reactiveForm.controls['age'].errors['required'] ){
+          <small class="text-red-500">Required field.</small>
+      }
+
+      @if(reactiveForm.controls['age'].errors['max'] ){
+        <small class="text-red-500">Max value is {{reactiveForm.controls['age'].errors['max']['max']}}</small>
+      }
+
+      @if(reactiveForm.controls['age'].errors['min'] ){
+        <small class="text-red-500">Min value is {{reactiveForm.controls['age'].errors['min']['min']}}</small>
+      }
+    }
+
+    <label class="flex flex-col gap-1 justify-center"
+      >Tipo
+      <select name="type" formControlName="type" required>
+        @for(type of types; track $index){
+        <option [value]="type">{{ type }}</option>
+        }
+      </select>
+    </label>
+
+    <label class="flex gap-1"
+      >Are you gay?
+      <input
+        name="isGay"
+        formControlName="isGay"
+        type="checkbox"
+        class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+        placeholder="24"
+    /></label>
+
+    <fieldset formGroupName="address">
+      <legend>Endereço</legend>
+
+      <label class="flex flex-col gap-1 justify-center"
+        >City
+        <input
+          name="city"
+          formControlName="city"
+          type="text"
+          class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+          placeholder="Watertown"
+          required
+      /></label>
+
+      @if(address.controls['city'].errors && (address.controls['city'].dirty||address.controls['city'].touched)){
+
+        @if(address.controls['city'].errors['required'] ){
+            <small class="text-red-500">Required field.</small>
+        }
+    
+      }
+
+      <label class="flex flex-col gap-1 justify-center"
+        >Street
+        <input
+          name="street"
+          formControlName="street"
+          type="text"
+          class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+          placeholder="Water Street, 190"
+          required
+      /></label>
+
+      @if(address.controls['street'].errors && (address.controls['street'].dirty||address.controls['street'].touched)){
+
+        @if(address.controls['street'].errors['required'] ){
+            <small class="text-red-500">Required field.</small>
+        }
+    
+      }
+
+      <label class="flex flex-col gap-1 justify-center"
+        >Zipcode
+        <input
+          name="zipcode"
+          formControlName="zipcode"
+          type="text"
+          class="p-1 border-1 border-black text-muted placeholder:text-stone-600"
+          placeholder="02132131"
+      /></label>
+    </fieldset>
+    @if(address.controls['zipcode'].errors && (address.controls['zipcode'].dirty||address.controls['zipcode'].touched)){
+
+      @if(address.controls['zipcode'].errors['required'] ){
+          <small class="text-red-500">Required field.</small>
+      }
+
+      @if(address.controls['zipcode'].errors['pattern'] ){
+        <small class="text-red-500">Zipcode must have only numbers.</small>
+      }
+  
+    }
+
+    <!-- Form Array -->
+    <fieldset formArrayName="skills">
+      <legend>Skills</legend>
+      <div class="flex flex-col gap-2">
+        <button
+          class="cursor-pointer border-1 border-black"
+          (click)="addEmptySkill()"
+        >
+          Add Skill
+        </button>
+        <div>
+          @for (skill of skills.controls; track $index; let i = $index) {
+          <div class="flex gap-1">
+            <div class="flex gap-1">
+              <p class="font-bold flex-1">Skill {{ i }}:</p>
+              <input type="text" [formControlName]="i" />
+            </div>
+            <button (click)="removeSkill(i)">Delete</button>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+
+        @if(skills.errors && (skills.dirty||skills.touched)){
+  
+          @if(skills.errors['required'] ){
+              <small class="text-red-500">Required field.</small>
+          }
+    
+          @if(skills.errors['minlength'] ){
+            <small class="text-red-500">Field must have {{skills.errors['minlength']['requiredLength']}} ou more skills.</small>
+          }
+  
+          @if(skills.errors['pattern'] ){
+            <small class="text-red-500">Skill must have only letter and numbers.</small>
+          }
+      
+        }
+      </div>
+    </fieldset>
+
+    <div class="flex gap-2">
+      <button
+        [disabled]="reactiveForm.invalid"
+        type="submit"
+        class="border-1 border-indigo-500 p-1 cursor-pointer disabled:opacity-50"
+      >
+        Submit
+      </button>
+      <button
+        (click)="resetForm()"
+        type="button"
+        class="border-1 border-indigo-500 p-1 cursor-pointer"
+      >
+        Reset
+      </button>
+      <button
+        (click)="patchForm()"
+        type="button"
+        class="border-1 border-indigo-500 p-1 cursor-pointer"
+      >
+        Patch Email
+      </button>
+    </div>
+  </form>
+</div>

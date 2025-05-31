@@ -69,5 +69,9 @@ export class AppComponent {
       url: 'template-driven-form',
       label: 'Template Driven Form',
     },
+    {
+      url: 'reactive-form',
+      label: 'Reactive Form',
+    },
   ];
 }

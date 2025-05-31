@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
   // Default Route
@@ -43,7 +44,12 @@ export const routes: Routes = [
     component: TemplateDrivenFormComponent,
   },
   {
+    path: 'reactive-form',
+    component: ReactiveFormComponent,
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
+  
 ];
