@@ -73,5 +73,9 @@ export class AppComponent {
       url: 'reactive-form',
       label: 'Reactive Form',
     },
+    {
+      url: 'service-dependency-injection',
+      label: 'Service and Dependency Injection',
+    },
   ];
 }

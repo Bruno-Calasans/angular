@@ -1,0 +1,28 @@
+<div>
+  <!-- Share business logic -->
+  <h1>Service and Dependency Injection</h1>
+  <p class="font-bold">
+    Name:
+    <span class="font-normal">{{ user.name }}</span>
+  </p>
+  <p class="font-bold">
+    Username:
+    <span class="font-normal">{{ user.username }}</span>
+  </p>
+  <p class="font-bold">
+    Email:
+    <span class="font-normal">{{ user.email }}</span>
+  </p>
+  <p class="font-bold">
+    Premium:
+    <span class="font-normal"
+      >@if(canAccessPremiumContent){ yes} @else{ no }</span
+    >
+  </p>
+
+  <!-- Share api data -->
+  @for(quote of quotes; track $index){
+  <pre>{{ quote | json }}</pre>
+  }
+  <!-- <pre>{{ quotes | json }}</pre> -->
+</div>

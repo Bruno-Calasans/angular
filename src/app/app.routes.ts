@@ -8,6 +8,7 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { ServiceDependencyInjectionComponent } from './service-dependency-injection/service-dependency-injection.component';
 
 export const routes: Routes = [
   // Default Route
@@ -48,8 +49,11 @@ export const routes: Routes = [
     component: ReactiveFormComponent,
   },
   {
+    path: 'service-dependency-injection',
+    component: ServiceDependencyInjectionComponent,
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
-  
 ];
