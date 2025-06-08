@@ -9,6 +9,10 @@ import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { ServiceDependencyInjectionComponent } from './service-dependency-injection/service-dependency-injection.component';
+import { CrudComponent } from './crud/crud.component';
+import { AddNewUserComponent } from './crud/add-new-user/add-new-user.component';
+import { EditUserComponent } from './crud/edit-user/edit-user.component';
+import { RemoveUserComponent } from './crud/remove-user/remove-user.component';
 
 export const routes: Routes = [
   // Default Route
@@ -51,6 +55,24 @@ export const routes: Routes = [
   {
     path: 'service-dependency-injection',
     component: ServiceDependencyInjectionComponent,
+  },
+  {
+    path: 'crud',
+    component: CrudComponent,
+    children: [
+      {
+        path: 'remove/:userId',
+        component: RemoveUserComponent,
+      },
+    ],
+  },
+  {
+    path: 'crud/new',
+    component: AddNewUserComponent,
+  },
+  {
+    path: 'crud/edit/:userId',
+    component: EditUserComponent,
   },
   {
     path: '**',

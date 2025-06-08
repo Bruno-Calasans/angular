@@ -1,0 +1,59 @@
+<main class="p-4">
+  <h1 class="text-lg font-bold">Add new User</h1>
+  <form [formGroup]="createUserForm" action="" class="flex flex-col gap-3 p-2">
+    <label class="flex flex-col">
+      Username
+      <input
+        formControlName="username"
+        class="placeholder:text-stone-500"
+        type="text"
+        name="username"
+        placeholder="Add your username"
+      />
+      @if(createUserForm.controls['username'].errors &&
+      (createUserForm.controls['username'].dirty||createUserForm.controls['username'].touched)){
+        @if(createUserForm.controls['username'].errors['required'] ){
+        <small class="text-red-500">Required field.</small>
+        } 
+        @if(createUserForm.controls['username'].errors['pattern'] ){
+        <small class="text-red-500">Username must have only letters.</small>
+        } 
+    }
+    </label>
+
+    <label class="flex flex-col">
+      Email
+      <input
+        formControlName="email"
+        class="placeholder:text-stone-500"
+        type="email"
+        name="email"
+        placeholder="Add your email"
+      />
+      @if(createUserForm.controls['email'].errors &&
+      (createUserForm.controls['email'].dirty||createUserForm.controls['email'].touched)){
+      @if(createUserForm.controls['email'].errors['required'] ){
+      <small class="text-red-500">Required field.</small>
+      } @if(createUserForm.controls['email'].errors['email'] ){
+      <small class="text-red-500">Invalid email.</small>
+      } }
+    </label>
+  </form>
+  <div>
+    <button
+      [disabled]="createUserForm.invalid"
+      (click)="createNewUser()"
+      type="button"
+      class="text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer disabled:cursor-default disabled:opacity-80"
+    >
+      Create
+    </button>
+    <button
+      (click)="cancelCreateNewUser()"
+      type="button"
+      class="text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer"
+    >
+      Cancel
+    </button>
+  </div>
+</main>

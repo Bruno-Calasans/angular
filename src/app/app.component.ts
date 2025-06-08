@@ -77,5 +77,13 @@ export class AppComponent {
       url: 'service-dependency-injection',
       label: 'Service and Dependency Injection',
     },
+    {
+      url: 'crud',
+      label: 'CRUD',
+    },
+    // {
+    //   url: 'crud/add-new-user',
+    //   label: 'A',
+    // },
   ];
 }

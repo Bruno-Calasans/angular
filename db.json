@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "arrombados",
+      "email": "arrombadinho@email.com"
+    },
+    {
+      "id": "2",
+      "username": "james",
+      "email": "james@x.dummyjson.com"
+    },
+    {
+      "id": "3e07",
+      "username": "frescalhado",
+      "email": "frescalhado@email.com"
+    }
+  ]
+}
