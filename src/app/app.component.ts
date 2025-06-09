@@ -81,9 +81,9 @@ export class AppComponent {
       url: 'crud',
       label: 'CRUD',
     },
-    // {
-    //   url: 'crud/add-new-user',
-    //   label: 'A',
-    // },
+    {
+      url: 'resource',
+      label: 'Resource',
+    },
   ];
 }

@@ -13,6 +13,7 @@ import { CrudComponent } from './crud/crud.component';
 import { AddNewUserComponent } from './crud/add-new-user/add-new-user.component';
 import { EditUserComponent } from './crud/edit-user/edit-user.component';
 import { RemoveUserComponent } from './crud/remove-user/remove-user.component';
+import { ResourceComponent } from './resource/resource.component';
 
 export const routes: Routes = [
   // Default Route
@@ -73,6 +74,10 @@ export const routes: Routes = [
   {
     path: 'crud/edit/:userId',
     component: EditUserComponent,
+  },
+  {
+    path: 'resource',
+    component: ResourceComponent,
   },
   {
     path: '**',
