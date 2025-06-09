@@ -1,5 +1,7 @@
 <main>
   <h1>View Reusable Component</h1>
+  <p>Counter: {{ count }}</p>
+
   <app-reusable
     name="Vagabundo"
     [showWelcomeMsg]="true"
@@ -9,5 +11,6 @@
       name: 'Lixo',
       age: 100
     }"
+    [(value)]="count"
   />
 </main>

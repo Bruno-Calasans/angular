@@ -7,4 +7,6 @@ import { ReusableComponent } from '../reusable/reusable.component';
   templateUrl: './view-reusable.component.html',
   styleUrl: './view-reusable.component.css',
 })
-export class ViewReusableComponent {}
+export class ViewReusableComponent {
+  count = 0;
+}
