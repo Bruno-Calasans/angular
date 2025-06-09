@@ -89,5 +89,9 @@ export class AppComponent {
       url: 'reusable-component',
       label: 'Reusable Component',
     },
+    {
+      url: 'data-sharing',
+      label: 'Data Sharing',
+    },
   ];
 }

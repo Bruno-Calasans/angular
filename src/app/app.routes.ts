@@ -15,6 +15,10 @@ import { EditUserComponent } from './crud/edit-user/edit-user.component';
 import { RemoveUserComponent } from './crud/remove-user/remove-user.component';
 import { ResourceComponent } from './resource/resource.component';
 import { ViewReusableComponent } from './reusable/view-reusable/view-reusable.component';
+import { DataSharingComponent } from './data-sharing/data-sharing.component';
+import { ParentChildComponent } from './data-sharing/parent-child/parent-child.component';
+import { SiblingsComponent } from './data-sharing/siblings/siblings.component';
+import { ParentChildViewChildComponent } from './data-sharing/parent-child-view-child/parent-child-view-child.component';
 
 export const routes: Routes = [
   // Default Route
@@ -83,6 +87,22 @@ export const routes: Routes = [
   {
     path: 'reusable-component',
     component: ViewReusableComponent,
+  },
+  {
+    path: 'data-sharing',
+    component: DataSharingComponent,
+  },
+  {
+    path: 'data-sharing/parent-child',
+    component: ParentChildComponent,
+  },
+  {
+    path: 'data-sharing/siblings',
+    component: SiblingsComponent,
+  },
+  {
+    path: 'data-sharing/parent-child-view-child',
+    component: ParentChildViewChildComponent,
   },
   {
     path: '**',

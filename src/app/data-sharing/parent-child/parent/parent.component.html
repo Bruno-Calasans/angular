@@ -1,0 +1,18 @@
+<main class="p-2">
+  <div>
+    <h1 class="font-bold text-lg">Parent Component</h1>
+  </div>
+  <section>
+    <div>
+      {{ dataFromChild }}
+    </div>
+  </section>
+  <section>
+    <app-child
+      [inputData1]="someMsg"
+      [inputData2]="someMsg"
+      (outputData1)="onRecieveDataFromChild($event)"
+      (outputData2)="onRecieveDataFromChild($event)"
+    ></app-child>
+  </section>
+</main>
