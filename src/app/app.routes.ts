@@ -14,6 +14,7 @@ import { AddNewUserComponent } from './crud/add-new-user/add-new-user.component'
 import { EditUserComponent } from './crud/edit-user/edit-user.component';
 import { RemoveUserComponent } from './crud/remove-user/remove-user.component';
 import { ResourceComponent } from './resource/resource.component';
+import { ViewReusableComponent } from './reusable/view-reusable/view-reusable.component';
 
 export const routes: Routes = [
   // Default Route
@@ -78,6 +79,10 @@ export const routes: Routes = [
   {
     path: 'resource',
     component: ResourceComponent,
+  },
+  {
+    path: 'reusable-component',
+    component: ViewReusableComponent,
   },
   {
     path: '**',

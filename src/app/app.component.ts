@@ -85,5 +85,9 @@ export class AppComponent {
       url: 'resource',
       label: 'Resource',
     },
+    {
+      url: 'reusable-component',
+      label: 'Reusable Component',
+    },
   ];
 }

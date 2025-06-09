@@ -1,0 +1,23 @@
+<div class="p-1 w-54">
+  
+  <!-- Boolean -->
+  @if(showWelcomeMsg){ 
+    
+    <!-- Number -->
+    @for(count of createRange(welcomeMsgsCount); track $index){
+
+      <!-- String -->
+      <h1 class="italic">Hello, {{ name }}</h1>
+    } 
+  }
+
+  <!-- Arrays -->
+  <div>
+    @for(skill of skills; track $index){
+    <h1 class="font-bold">{{ skill }}</h1>
+    }
+  </div>
+
+  <!-- Object -->
+  <pre>{{ user | json }}</pre>
+</div>
